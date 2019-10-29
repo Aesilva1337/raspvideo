@@ -69,7 +69,7 @@ function startWebRTC(isOfferer) {
   }, onError);
 
   room.on('data', (message, client) => {
-    if (client.id === drone.clientId) {
+    if (client && client.id === drone.clientId) {
       return;
     }
 
