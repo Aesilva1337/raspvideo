@@ -1,8 +1,8 @@
 // Generate random room name if needed
-if (!location.hash) {
-  location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
-}
-const roomHash = location.hash.substring(1);
+// if (!location.hash) {
+//   location.hash = Math.floor(Math.random() * 0xFFFFFF).toString(16);
+// }
+const roomHash = 'SalaRaizen';
 
 // TODO: Replace with your own channel ID
 const drone = new ScaleDrone('yiS12Ts5RdNhebyM');
