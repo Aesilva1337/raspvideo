@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
   <meta charset="utf-8">
@@ -11,11 +12,10 @@
       margin: 0;
       align-items: center;
       justify-content: center;
-      padding: 0 50px;
       font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-
     }
-    .back{
+
+    .back {
       height: 100vh;
       width: 100vw;
       background-image: url('./assets/connection-vector-02.png');
@@ -25,35 +25,122 @@
       display: flex;
       align-content: center;
       align-items: center;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
     }
+
     video {
-      margin: 0 auto; 
-      width: 50%;
+      margin: 0 auto;
+      width: 90%;
+      /* width: 100%; */
       box-sizing: border-box;
       border-radius: 2px;
       padding: 0;
       background-color: black;
       box-shadow: rgb(156, 172, 172) 0px 2px 2px, rgba(156, 172, 172) 0px 4px 4px, rgb(156, 172, 172) 0px 8px 8px, rgb(156, 172, 172) 0px 16px 16px, rgb(156, 172, 172) 0px 32px 32px, rgba(156, 172, 172) 0px 64px 64px;
     }
+
     .title {
-      position: fixed;
       width: 20%;
-      top: 10px;
-      right: 0;
     }
+
     .raizen-img {
-      width: 20%;
+      width: 13%;
+    }
+
+    .camera-wrap {
+      display: flex;
+      width: 65%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .iframe-wrap {
+      height: 100%;
+      width: 35%;
+      padding-left: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .iframe-wrap div {
+      height: 31%;
+    }
+
+    .top-camera {
+      width: 90%;
+      /* width: 100%; */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: 600px) {
+      .back {
+        flex-direction: column;
+      }
+
+      .iframe-wrap {
+        flex-direction: row;
+        height: auto;
+        width: auto;
+      }
+
+      .iframe-wrap div {
+        height: auto;
+        width: 31%;
+      }
+
+      .camera-wrap {
+        width: auto;
+      }
+
+    }
+
+    @media screen and (max-width: 400px) {
+      .iframe-wrap {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      .iframe-wrap div {
+        height: auto;
+        width: auto;
+      }
     }
   </style>
 </head>
+
 <body>
   <div class="back">
-      <img class="title" src="./assets/logo-2018.png" alt="">
+    <div class="iframe-wrap">
+      <div>
+        <iframe name="burndown" id="gadget_burndown" src="http://soalv3dfgc01:8080/Inov/Sars/Frontend/Home/Report/12063"
+          scrolling="yes" width="100%" height="100%" frameborder="no">
+        </iframe>
+      </div>
+      <div>
+        <iframe name="burndown" id="gadget_burndown" src="http://soalv3dfgc01:8080/Inov/Sars/Frontend/Home/Report/12063"
+          scrolling="yes" width="100%" height="100%" frameborder="no">
+        </iframe>
+      </div>
+      <div>
+        <iframe name="burndown" id="gadget_burndown" src="http://soalv3dfgc01:8080/Inov/Sars/Frontend/Home/Report/12063"
+          scrolling="yes" width="100%" height="100%" frameborder="no">
+        </iframe>
+      </div>
+    </div>
+    <div class="camera-wrap">
+      <div class="top-camera">
         <img class="raizen-img" src="./assets/Raizen-logo.png" alt="">
-        <video id="remoteVideo" autoplay></video>
+        <img class="title" src="./assets/logo-2018.png" alt="">
+      </div>
+      <video id="remoteVideo" autoplay></video>
+    </div>
     <script src="./scripts/hub.js"></script>
   </div>
 </body>
+
 </html>
